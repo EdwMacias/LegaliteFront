@@ -22,8 +22,8 @@ export class LoginServiceService {
 
   constructor(private http: HttpClient  ) { }
 
-  getLogin(correo?: any, contraseña?: any): Observable<any | boolean>{
-    const endpoint = `${base_url}validarusuario/${correo}/${contraseña}`;
+  getLogin(correo?: any, contrasena?: any): Observable<any | boolean>{
+    const endpoint = `${base_url}validarusuario/${correo}/${contrasena}`;
 
     return this.http.get(endpoint);
   }

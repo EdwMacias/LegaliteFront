@@ -28,16 +28,16 @@ export class LoginComponent implements OnInit {
   iniciarSesio(){
      let dataForm = {
       correo: this.formulario.get('correo')?.value,
-      contraseña: this.formulario.get('contraseña')?.value
+      contrasena: this.formulario.get('contrasena')?.value
     }
 
-    if(dataForm.correo == "" || dataForm.contraseña == ""){
+    if(dataForm.correo == "" || dataForm.contrasena == ""){
 
     alert('Ingrese la informacion requerida en el formulario')
     }
     if(dataForm != null){
 
-      this.login.getLogin(dataForm.correo, dataForm.contraseña)
+      this.login.getLogin(dataForm.correo, dataForm.contrasena)
           .subscribe((data: any, ) => {
             //this.dialogRef.close(1);
             console.log("Ingreso ");
@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['dashboard']);
           }, (error:any) => {
             //this.dialogRef.close(2);
-            alert("No pudo ingresar algun dato esta incorrecto");
+            alert("Por favor, revise los datos de inicio de sesion");
           })
     //this.router.navigate(['dashboard']);
     }
