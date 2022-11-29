@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
     this.formulario = this.fb.group({
       correo: ['Lider1@leagalite.com.com',[Validators.email]],
-      contraseña: ['0987654321', [Validators.minLength(6)]]
+      contrasena: ['0987654321', [Validators.minLength(6)]]
       });
   }
 
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   iniciarSesio(){
-     let dataForm = {
+  let dataForm = {
       correo: this.formulario.get('correo')?.value,
       contrasena: this.formulario.get('contrasena')?.value
     }
@@ -53,16 +53,6 @@ export class LoginComponent implements OnInit {
           })
     //this.router.navigate(['dashboard']);
     }
-   /*  const respuesta = {
-      id: '123456',
-      user: 'victor'
-    }
-    const resFormat = JSON.stringify(respuesta);
-    localStorage.setItem('key',resFormat);
-
-    const answer = localStorage.getItem('key') as string;
-    const conver = JSON.parse(answer);
-    console.log(conver.id); */
     //this.router.navigate(['/dashboard']);
   }
 

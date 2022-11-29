@@ -18,8 +18,8 @@ export class CambioPasswordComponent implements OnInit {
 
     this.passwordForm = this.fb.group({
       correo: ['', Validators.required],
-      contraseña: ['', Validators.required],
-      nuevacontraseña: ['algo', Validators.required]
+      contrasena: ['', Validators.required],
+      nuevacontrasena: ['algo', Validators.required]
     });
   }
 
@@ -30,8 +30,8 @@ export class CambioPasswordComponent implements OnInit {
   changePassword(){
     let data = {
       correo: this.passwordForm.get('correo')?.value,
-      contraseña: this.passwordForm.get('contraseña')?.value,
-      nuevacontraseña: this.passwordForm.get('nuevacontraseña')?.value
+      contrasena: this.passwordForm.get('contrasena')?.value,
+      nuevacontrasena: this.passwordForm.get('nuevacontrasena')?.value
     }
 
     console.log(data)
