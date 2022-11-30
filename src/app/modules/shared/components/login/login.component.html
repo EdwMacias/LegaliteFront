@@ -1,21 +1,26 @@
-
 <body>
   <div class="center">
-      <h1>INTRANET</h1>
-      <form  [formGroup]="formulario">
-        <div class="txt_field">
-          <input type="text" formControlName="correo" required />
-          <span></span>
-          <label>Usuario</label>
-        </div>
-        <div class="txt_field">
-          <input type="password" formControlName="password" required />
-          <span></span>
-          <label>Contraseña</label>
-        </div>
-        <button type="submit" class="pass">¿Olvidaste la contraseña?</button>
-        <button type="submit" class="buttons" (click)="iniciarSesio()">iniciar sesión</button>
-        <div class="signup_link"></div>
-      </form>
+    <h1><b> INTRANET</b></h1>
+    <img
+      class="legalite"
+      src="./assets/LOGO-COLO-LEGALITE_Mesa-de-trabajo-1-1024x576.png"
+      alt="Logo empresa"
+    />
+    <form [formGroup]="formulario">
+      <div class="txt_field">
+        <input type="text" formControlName="correo" required />
+        <span></span>
+        <label>Usuario</label>
+      </div>
+      <div class="txt_field">
+        <input type="password" formControlName="password" required />
+        <span></span>
+        <label>Contraseña</label>
+      </div>
+      <button type="submit" class="buttons" (click)="iniciarSesio()">
+        iniciar sesión
+      </button>
+      <div class="signup_link"></div>
+    </form>
   </div>
 </body>

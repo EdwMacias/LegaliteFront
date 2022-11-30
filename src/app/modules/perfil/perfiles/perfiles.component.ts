@@ -27,7 +27,7 @@ export class PerfilesComponent implements OnInit {
     this.getPerfil();
   }
 
-  displayedColumns: string[] = ['idUser', 'nombre', 'nit', 'correo',  'direccion', 'cargo', 'password', 'actions'];
+  displayedColumns: string[] = ['idUser', 'nombre', 'nit', 'correo',  'direccion', 'actions'];
   dataSource = new MatTableDataSource<PerfilesElement>();
 
   @ViewChild(MatPaginator)

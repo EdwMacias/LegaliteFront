@@ -1,96 +1,135 @@
 <mat-card>
-
-  <h2 Class="alinear">Lista de Pqr</h2>
+  <h2 Class="alinear"><b> Lista de PQRS</b></h2>
   <mat-card-header>
     <div>
-      <mat-form-field hintLabel="Buscar Pqr" appearance="fill">
-        <mat-label>Buscar Pqr</mat-label>
-        <input matInput #input (keyup)="buscar(input.value)">
-
+      <mat-form-field hintLabel="Buscar PQRS" appearance="fill">
+        <mat-label>Buscar PQRS</mat-label>
+        <input matInput #input (keyup)="buscar(input.value)" />
       </mat-form-field>
     </div>
-
   </mat-card-header>
   <mat-card-header>
     <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
       <ul fxLayout="row" fxLayoutGap="20px">
         <li class="">
-            <button *ngIf="validar==4 || validar==1 || validar==3" mat-raised-button color="primary" (click)="openPqrDialog()">Crear Pqr</button>
-            <button *ngIf="validar==2" mat-raised-button color="primary" (click)="searchMyPqr()">Ver mis Pqr</button>
+          <button
+            *ngIf="validar == 4 || validar == 1 || validar == 3"
+            mat-raised-button
+            color="primary"
+            (click)="openPqrDialog()"
+          >
+            Crear PQRS
+          </button>
+          <button
+            *ngIf="validar == 2"
+            mat-raised-button
+            color="primary"
+            (click)="searchMyPqr()"
+          >
+            Ver mis PQRS
+          </button>
         </li>
       </ul>
-
     </div>
   </mat-card-header>
 
-  <div mat-card-image></div >
+  <div mat-card-image></div>
 
   <mat-card-content>
     <table mat-table [dataSource]="dataSource" class="mat-cell">
-
       <!-- id colum -->
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef>N°</th>
-        <td mat-cell *matCellDef="let element">{{element.idPqr}}</td>
+        <td mat-cell *matCellDef="let element">{{ element.idPqr }}</td>
       </ng-container>
 
       <!-- asuto colum -->
       <ng-container matColumnDef="asunto">
         <th mat-header-cell *matHeaderCellDef>Asunto</th>
-        <td mat-cell *matCellDef="let element">{{element.asunto}}</td>
+        <td mat-cell *matCellDef="let element">{{ element.asunto }}</td>
       </ng-container>
 
       <!-- cliente colum -->
       <ng-container matColumnDef="cliente">
         <th mat-header-cell *matHeaderCellDef>Nombre</th>
-        <td mat-cell *matCellDef="let element">{{element.cliente}}</td>
+        <td mat-cell *matCellDef="let element">{{ element.cliente }}</td>
       </ng-container>
 
       <!-- nit colum -->
       <ng-container matColumnDef="nit">
         <th mat-header-cell *matHeaderCellDef>Nit(Cliente)</th>
-        <td mat-cell *matCellDef="let element">{{element.idCliente}}</td>
+        <td mat-cell *matCellDef="let element">{{ element.idCliente }}</td>
       </ng-container>
 
       <!-- description colum -->
       <ng-container matColumnDef="description">
-        <th mat-header-cell *matHeaderCellDef>Descripcion(informacion detallada)</th>
-        <td mat-cell *matCellDef="let element">{{element.descripcion}}</td>
+        <th mat-header-cell *matHeaderCellDef>
+          Descripcion(informacion detallada)
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.descripcion }}</td>
       </ng-container>
 
       <!-- description colum -->
       <ng-container matColumnDef="estado">
-        <th mat-header-cell *matHeaderCellDef>Estado </th>
-        <td mat-cell *matCellDef="let element">{{element.estado}}</td>
+        <th mat-header-cell *matHeaderCellDef>Estado</th>
+        <td mat-cell *matCellDef="let element">{{ element.estado }}</td>
       </ng-container>
 
       <!-- Acciones tabla -->
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef>Acciones</th>
-        <td mat-cell *matCellDef="let element; let i=index">
-          <button *ngIf="validar==4 || validar==1 || validar==3" mat-icon-button color="primary" (click)="edit(element.idPqr, element.asunto, element.idCliente, element.descripcion, element.cliente, element.estado)">
+        <td mat-cell *matCellDef="let element; let i = index">
+          <button
+            *ngIf="validar == 4 || validar == 1 || validar == 3"
+            mat-icon-button
+            color="primary"
+            (click)="
+              edit(
+                element.idPqr,
+                element.asunto,
+                element.idCliente,
+                element.descripcion,
+                element.cliente,
+                element.estado
+              )
+            "
+          >
             <mat-icon aria-label="Edit">edit</mat-icon>
           </button>
-          <button *ngIf="validar==4 || validar==1 || validar==3" mat-icon-button color="primary" (click)="delete(element.idPqr)">
+          <button
+            *ngIf="validar == 4 || validar == 1 || validar == 3"
+            mat-icon-button
+            color="primary"
+            (click)="delete(element.idPqr)"
+          >
             <mat-icon aria-label="Delete">delete_forever</mat-icon>
           </button>
-          <button *ngIf="validar==2 || validar==4" mat-icon-button color="primary" (click)="check(element.idPqr)">
+          <button
+            *ngIf="validar == 2 || validar == 4"
+            mat-icon-button
+            color="primary"
+            (click)="check(element.idPqr)"
+          >
             <mat-icon aria-label="end">done_outline</mat-icon>
           </button>
-          <button *ngIf="validar==4 || validar==1" mat-icon-button color="primary" (click)="Returned(element.idPqr)">
+          <button
+            *ngIf="validar == 4 || validar == 1"
+            mat-icon-button
+            color="primary"
+            (click)="Returned(element.idPqr)"
+          >
             <mat-icon aria-label="Returned">thumb_down</mat-icon>
           </button>
         </td>
-
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-
     </table>
 
-    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons
+    ></mat-paginator>
   </mat-card-content>
-
 </mat-card>

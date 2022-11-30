@@ -19,7 +19,7 @@ export class CambioPasswordComponent implements OnInit {
     this.passwordForm = this.fb.group({
       correo: ['', Validators.required],
       password: ['', Validators.required],
-      nuevapassword: ['algo', Validators.required]
+      nuevapassword: ['', Validators.required]
     });
   }
 
@@ -44,7 +44,7 @@ export class CambioPasswordComponent implements OnInit {
           })
     }else {
       //error de datos
-      alert("debe haber informacion")
+      alert("Rellene todos los campos para efectuar el cambio")
 
       }
   }

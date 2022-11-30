@@ -20,8 +20,8 @@ export class LoginComponent implements OnInit {
               private login: LoginServiceService) {
 
     this.formulario = this.fb.group({
-      correo: ['victorup1902@gmail.com',[Validators.email]],
-      password: ['123456890', [Validators.minLength(6)]]
+      correo: ['',[Validators.email]],
+      password: ['', [Validators.minLength(6)]]
       });
   }
 
@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
             this.login.user = true;
             this.router.navigate(['dashboard']);
           }, (error:any) => {
-            alert("No pudo ingresar algun dato esta incorrecto");
+            alert("Verifique los datos de inicio de sesión");
           })
     //this.router.navigate(['dashboard']);
     }
