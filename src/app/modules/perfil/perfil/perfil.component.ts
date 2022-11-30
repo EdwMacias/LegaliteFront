@@ -108,7 +108,7 @@ export class PerfilComponent implements OnInit {
         this.openSnackBar("Contraseña actualizada", "Exitosa");
         this.getPerfil();
       }else if(result === 2){
-        this.openSnackBar("Error al acualizar contraseña", "Fallido");
+        this.openSnackBar("Error al actualizar contraseña", "Fallido");
         this.getPerfil();
 
       }

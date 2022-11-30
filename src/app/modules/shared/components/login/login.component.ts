@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
   }
 
   iniciarSesio(){
-     let dataForm = {
+  let dataForm = {
       correo: this.formulario.get('correo')?.value,
       password: this.formulario.get('password')?.value
     }
@@ -54,16 +54,6 @@ export class LoginComponent implements OnInit {
           })
     //this.router.navigate(['dashboard']);
     }
-   /*  const respuesta = {
-      id: '123456',
-      user: 'victor'
-    }
-    const resFormat = JSON.stringify(respuesta);
-    localStorage.setItem('key',resFormat);
-
-    const answer = localStorage.getItem('key') as string;
-    const conver = JSON.parse(answer);
-    console.log(conver.id); */
     //this.router.navigate(['/dashboard']);
   }
 
